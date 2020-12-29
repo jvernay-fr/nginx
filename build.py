@@ -1,5 +1,3 @@
-
-
 import tarfile
 import shutil
 import os
@@ -25,21 +23,6 @@ http {{
     include {actual_conf_location} ;
 }}
 """
-
-"""
-# configuration for nginx
-configuration = {
-    # to disable the following configurations, replace it by "#"
-    
-    "CONF_USER": "user {}".format(getpass.getuser()), # so that temporary files created by nginx inside nginx-root are deletable for the current user
-    "CONF_SSL_CERTIFICATE": "ssl_certificate /etc/letsencrypt/live/jvernay.fr/fullchain.pem", # if no HTTPS wanted, replace with "#"
-    "CONF_SSL_CERTIFICATE_KEY": "ssl_certificate_key /etc/letsencrypt/live/jvernay.fr/privkey.pem", # if no HTTPS wanted, replace with "#"
-    
-    "CONF_INCLUDE_SERVERS_CONF": "/home/{}/jvernay.fr/servers.conf".format(getpass.getuser())
-}
-"""
-
-
 
 # do cleanup
 for p in [ "nginx", "nginx-root", "src" ]:
